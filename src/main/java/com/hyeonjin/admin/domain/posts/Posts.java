@@ -13,7 +13,7 @@ import javax.persistence.*;
 @Entity
 // 테이블과 링크될 캘르스임을 나타냄
 // 기본값으로 클래스의 카멜케이스 이름을 언더스코어 네이밍으로 테이블 이름을 매칭 ex) SalesManager.java -> sales_manager table
-public class Posts {
+public class Posts extends BaseTimeEntity{
     // Setter가 없음 -> 클래스의 인스턴스 값들이 언제 어디서 변해야 하는지 코드상으로 명확하게 구분할 수가 없어(전부다 set필드명 으로 시작하는 함수) 차후 기능 변경 시 복잡해짐
     // Entity 클래스에서는 절대 Setter 메소드를 만들지 않음 -> 필드 값의 변경이 필요하면 명확히 그 목적과 의도를 나타낼 수 있는 메소드를 추가해야함
     // 생성자를 통해 최종값을 채우고 DB에 insert -> 값 변경이 필요한 경우 해당 이벤트에 맞는 public 메서드를 호출하여 변경하는 것을 전제로 함
