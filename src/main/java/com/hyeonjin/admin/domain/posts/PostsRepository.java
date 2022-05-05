@@ -6,3 +6,4 @@ import org.springframework.data.jpa.repository.JpaRepository;
 // Entity클래스와 기본 Entity Repository는 반드시 함께 위치
 public interface PostsRepository extends JpaRepository<Posts, Long> { //<Entity클래스, PK타입> -> CRUD 메서드 자동 생성
 }
+

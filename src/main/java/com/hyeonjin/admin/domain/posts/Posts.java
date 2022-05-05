@@ -20,7 +20,7 @@ public class Posts extends BaseTimeEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    private Integer num;
     @Column(length = 5000, nullable = false)
     private String title;
 
@@ -42,4 +42,5 @@ public class Posts extends BaseTimeEntity{
         this.title = title;
         this.content = content;
     }
+
 }
