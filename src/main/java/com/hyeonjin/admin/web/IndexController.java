@@ -1,5 +1,6 @@
 package com.hyeonjin.admin.web;
 
+import com.hyeonjin.admin.config.auth.LoginUser;
 import com.hyeonjin.admin.config.auth.dto.SessionUser;
 import com.hyeonjin.admin.service.posts.PostsService;
 import com.hyeonjin.admin.web.dto.PostsResponseDto;
@@ -19,10 +20,10 @@ public class IndexController {
     private final HttpSession httpSession;
 
     @GetMapping("/")
-    public String index(Model model){
+    public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc());
 
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+//        SessionUser user = (SessionUser) httpSession.getAttribute("user"); @LoginUser 구현을 통한 리팩토링
 
         if (user != null){
             model.addAttribute("userName", user.getName());
